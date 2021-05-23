@@ -157,17 +157,17 @@ Win::Win(QWidget *parent):QWidget(parent)
     /*
      * Связываем сигнал нажатия на кнопку "Выход" со слотом close()
     */
-    connect(exitButton, SIGNAL(clicked(bool)), this, SLOT(close()));
+    connect(exitButton, &QPushButton::clicked, this, &Win::close);
 
     /*
      * Связываем сигнал нажатия на кнопку "Следующее" со слотом begin()
     */
-    connect(nextButton, SIGNAL(clicked(bool)), this, SLOT(begin()));
+    connect(nextButton, &QPushButton::clicked, this, &Win::begin);
 
     /*
      * Связываем сигнал завершения ввода returnPressed()– сигнал нажатия клавиши Enter со слотом calc()
     */
-    connect(inputEdit, SIGNAL(returnPressed()), this, SLOT(calc()));
+    connect(inputEdit, &QLineEdit::returnPressed, this, &Win::calc);
 }
 
 /*
